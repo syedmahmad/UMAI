@@ -1,0 +1,50 @@
+// Place all the styles related to the Lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.button {
+	display: table;
+	text-align: center;
+	margin: 40px auto;
+	padding: 20px 40px;
+	border: 1px solid #000;
+	font-size: 20px;
+	text-decoration: none;
+}
+.sub--item-button {
+	display: table;
+	text-align: center;
+	margin: 0 auto;
+	padding: 15px 25px;
+	border: 1px solid #000;
+	font-size: 14px;
+	text-decoration: none;
+}
+.heading {
+	margin: 40px auto;
+	text-align: center;
+}
+.list-content {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	ul {
+		width: 100%;
+		li {
+			display: flex;
+		    align-items: center;
+		    justify-content: space-between;
+		    .button-section {
+		    		display: flex;
+				    align-items: center;
+				    justify-content: space-around;
+				    flex-basis: 30%;
+		    }
+		    .sub-sectio {
+		    	  	justify-content: space-evenly;
+		    }
+		}
+		.sub-list {
+			padding: inherit;
+		}
+	}
+}

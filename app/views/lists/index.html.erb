@@ -1,0 +1,33 @@
+<%= link_to "Add New List", new_list_path, :class => "button" %>
+<h1 class="heading">All Lists</h1>
+<div class="list-content">
+
+  <ul>
+    <% @lists.each do |list| %>
+      <li>
+      	<h1><%= list.name%></h1>
+  		  <div class="button-section">
+  	        <p><%= link_to 'Show', list %></p>
+  	        <p><%= link_to 'Edit', edit_list_path(list) %></p>
+  	        <p><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      	</div>
+      </li>
+      <%= link_to "Add New List Item", new_list_item_path(:user_id => list.id), :class => "sub--item-button" %>
+      <% if list.list_items.present? %>
+      	<div class="sub-list">
+      		<% list.list_items.each do |list_item| %>
+  	      <li>
+  	      	 <h3><%= list_item.name%></h3>
+      			 <div class="button-section su">
+      		        <p><%= link_to 'Show', list_item %></p>
+      		        <p><%= link_to 'Edit', edit_list_item_path(list_item) %></p>
+      		        <p><%= link_to 'Destroy', list_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      	    	</div>
+  	      </li>
+  	     <% end %>
+  	    </div>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
